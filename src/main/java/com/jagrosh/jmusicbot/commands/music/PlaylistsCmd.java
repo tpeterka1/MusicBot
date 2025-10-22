@@ -19,6 +19,7 @@ import java.util.List;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.jagrosh.jmusicbot.Bot;
 import com.jagrosh.jmusicbot.commands.MusicCommand;
+import net.dv8tion.jda.api.interactions.InteractionContextType;
 
 /**
  *
@@ -32,8 +33,7 @@ public class PlaylistsCmd extends MusicCommand
         this.name = "playlists";
         this.help = "shows the available playlists";
         this.aliases = bot.getConfig().getAliases(this.name);
-        this.guildOnly = true;
-        this.beListening = false;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD};
         this.beListening = false;
     }
     

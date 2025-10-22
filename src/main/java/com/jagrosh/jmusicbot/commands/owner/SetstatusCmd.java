@@ -32,7 +32,7 @@ public class SetstatusCmd extends OwnerCommand
         this.help = "sets the status the bot displays";
         this.arguments = "<status>";
         this.aliases = bot.getConfig().getAliases(this.name);
-        this.guildOnly = false;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
     }
     
     @Override

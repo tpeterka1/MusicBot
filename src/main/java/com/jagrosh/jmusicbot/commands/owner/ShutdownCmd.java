@@ -33,7 +33,7 @@ public class ShutdownCmd extends OwnerCommand
         this.name = "shutdown";
         this.help = "safely shuts down";
         this.aliases = bot.getConfig().getAliases(this.name);
-        this.guildOnly = false;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
     }
     
     @Override

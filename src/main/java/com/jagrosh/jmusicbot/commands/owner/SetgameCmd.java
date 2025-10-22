@@ -32,7 +32,7 @@ public class SetgameCmd extends OwnerCommand
         this.help = "sets the game the bot is playing";
         this.arguments = "[action] [game]";
         this.aliases = bot.getConfig().getAliases(this.name);
-        this.guildOnly = false;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
         this.children = new OwnerCommand[]{
             new SetlistenCmd(),
             new SetstreamCmd(),
@@ -64,7 +64,7 @@ public class SetgameCmd extends OwnerCommand
             this.aliases = new String[]{"twitch","streaming"};
             this.help = "sets the game the bot is playing to a stream";
             this.arguments = "<username> <game>";
-            this.guildOnly = false;
+            this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
         }
 
         @Override
@@ -97,7 +97,7 @@ public class SetgameCmd extends OwnerCommand
             this.aliases = new String[]{"listening"};
             this.help = "sets the game the bot is listening to";
             this.arguments = "<title>";
-            this.guildOnly = false;
+            this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
         }
 
         @Override
@@ -127,7 +127,7 @@ public class SetgameCmd extends OwnerCommand
             this.aliases = new String[]{"watching"};
             this.help = "sets the game the bot is watching";
             this.arguments = "<title>";
-            this.guildOnly = false;
+            this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
         }
 
         @Override

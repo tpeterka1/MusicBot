@@ -25,6 +25,7 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.AudioChannel;
 import net.dv8tion.jda.api.exceptions.PermissionException;
+import net.dv8tion.jda.api.interactions.InteractionContextType;
 
 /**
  *
@@ -39,7 +40,7 @@ public abstract class MusicCommand extends Command
     public MusicCommand(Bot bot)
     {
         this.bot = bot;
-        this.guildOnly = true;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD};
         this.category = new Category("Music");
     }
     

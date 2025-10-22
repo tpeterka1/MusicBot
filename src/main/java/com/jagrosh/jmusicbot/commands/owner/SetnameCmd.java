@@ -32,7 +32,7 @@ public class SetnameCmd extends OwnerCommand
         this.help = "sets the name of the bot";
         this.arguments = "<name>";
         this.aliases = bot.getConfig().getAliases(this.name);
-        this.guildOnly = false;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
     }
     
     @Override

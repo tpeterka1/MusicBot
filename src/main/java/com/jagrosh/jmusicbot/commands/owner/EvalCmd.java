@@ -38,7 +38,7 @@ public class EvalCmd extends OwnerCommand
         this.help = "evaluates nashorn code";
         this.aliases = bot.getConfig().getAliases(this.name);
         this.engine = bot.getConfig().getEvalEngine();
-        this.guildOnly = false;
+        this.contexts = new InteractionContextType[]{InteractionContextType.GUILD, InteractionContextType.BOT_DM};
     }
     
     @Override
